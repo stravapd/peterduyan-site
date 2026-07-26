@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Peter Duyan — Design Leadership</title>
+<meta name="description" content="Peter Duyan — design leader building and scaling product design teams across fintech, health, and consumer technology." />
+<style>
+  :root{
+    --bg:#0a0a0a;
+    --fg:#ededed;
+    --muted:#8a8a8a;
+    --faint:#5f5f5f;
+    --line:#242424;
+    --accent:#cfcfcf;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--fg);
+    font-family:-apple-system,BlinkMacSystemFont,"Inter","Helvetica Neue",Arial,sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    letter-spacing:.01em;
+  }
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px;}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:20;
+    background:rgba(10,10,10,.82);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid transparent;
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:22px 40px;max-width:var(--maxw);margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:14px;}
+  .brand svg{width:40px;height:40px;display:block;}
+  .brand-text{line-height:1.25;}
+  .brand-text .name{display:block;font-weight:600;font-size:16px;}
+  .brand-text .role{display:block;color:var(--muted);font-size:16px;}
+  nav a{font-weight:600;font-size:15px;}
+  nav a:hover{color:var(--muted);}
+
+  /* Layout */
+  main{padding:70px 0 40px;}
+  .grid{
+    display:grid;
+    grid-template-columns:300px 1fr;
+    gap:64px;
+  }
+  .sidebar{position:sticky;top:120px;align-self:start;}
+  .summary{font-size:17px;line-height:1.6;color:var(--fg);}
+  .rule{height:1px;background:var(--line);border:0;margin:26px 0;}
+  .contact a{display:block;font-size:15px;padding:4px 0;color:var(--fg);}
+  .contact a span{color:var(--faint);}
+  .contact a:hover{color:var(--muted);}
+
+  /* Sections */
+  .label{
+    text-transform:uppercase;letter-spacing:.14em;font-size:11px;
+    color:var(--muted);font-weight:600;margin:0 0 4px;
+  }
+  section{margin-bottom:8px;}
+  .section-head{border-top:1px solid var(--line);padding-top:22px;margin-bottom:26px;}
+
+  .entry{
+    display:grid;grid-template-columns:230px 1fr;gap:40px;
+    padding:0 0 34px;
+  }
+  .entry-meta .title{font-weight:600;font-size:16px;margin:0 0 6px;}
+  .entry-meta .org{color:var(--muted);font-size:15px;}
+  .entry-meta .org a:hover{color:var(--fg);}
+  .entry-meta .dates{color:var(--faint);font-size:14px;margin-top:2px;}
+  .entry-body p{margin:0 0 12px;}
+  .entry-body ul{margin:0;padding:0;list-style:none;}
+  .entry-body li{position:relative;padding-left:18px;margin-bottom:9px;color:var(--fg);}
+  .entry-body li::before{content:"";position:absolute;left:2px;top:10px;width:4px;height:4px;border-radius:50%;background:var(--faint);}
+  .entry-body li b{font-weight:600;color:#fff;}
+
+  /* Skills / education grids */
+  .cols{display:grid;grid-template-columns:230px 1fr;gap:40px;}
+  .cols .body-cols{display:grid;grid-template-columns:1fr 1fr;gap:32px 40px;}
+  .skillgroup h4{font-size:14px;color:var(--muted);font-weight:500;margin:0 0 10px;}
+  .skillgroup ul{margin:0;padding:0;list-style:none;}
+  .skillgroup li{position:relative;padding-left:18px;margin-bottom:7px;font-size:15px;}
+  .skillgroup li::before{content:"";position:absolute;left:2px;top:9px;width:4px;height:4px;border-radius:50%;background:var(--faint);}
+  .edu{display:grid;grid-template-columns:1fr 1fr;gap:24px 40px;}
+  .edu .deg{font-size:15px;}
+  .edu .deg .school{color:var(--muted);}
+
+  /* Footer */
+  footer{border-top:1px solid var(--line);margin-top:40px;padding:60px 0 80px;}
+  .footer-inner{display:flex;justify-content:space-between;align-items:baseline;gap:30px;flex-wrap:wrap;}
+  footer h2{font-size:34px;font-weight:600;margin:0;letter-spacing:-.01em;}
+  footer .contact-links a{display:block;font-size:16px;padding:5px 0;}
+  footer .contact-links a:hover{color:var(--muted);}
+  .arrow{color:var(--faint);font-size:.85em;}
+
+  /* Responsive */
+  @media (max-width:860px){
+    .wrap,.header-inner{padding-left:24px;padding-right:24px;}
+    .grid{grid-template-columns:1fr;gap:40px;}
+    .sidebar{position:static;}
+    .entry{grid-template-columns:1fr;gap:14px;}
+    .cols{grid-template-columns:1fr;gap:20px;}
+    .cols .body-cols{grid-template-columns:1fr 1fr;}
+    main{padding:44px 0 20px;}
+    .brand-text .role{display:none;}
+    footer h2{font-size:26px;}
+  }
+  @media (max-width:520px){
+    .cols .body-cols{grid-template-columns:1fr;}
+    .edu{grid-template-columns:1fr;}
+    .brand svg{width:34px;height:34px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="brand" href="#top" aria-label="Peter Duyan home">
+      <svg viewBox="0 0 206 206" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+        <mask id="logo_m0" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="206" height="206">
+          <circle cx="103" cy="103" r="103" fill="black"/>
+        </mask>
+        <g mask="url(#logo_m0)">
+          <mask id="logo_m1" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-148" y="-18" width="313" height="369">
+            <g clip-path="url(#logo_clip0)">
+              <path d="M-148 102.789L84.2482 102.789C106.694 102.789 124.946 84.5371 124.946 62.0908C124.946 39.6446 106.682 21.3926 84.2482 21.3926C61.8148 21.3926 43.5499 39.6446 43.5499 62.0908L43.5499 68.1577" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M-148 98.9414L84.2482 98.9414C104.565 98.9414 121.099 82.4081 121.099 62.0911C121.099 41.774 104.565 25.2407 84.2482 25.2407C63.9311 25.2407 47.3979 41.774 47.3979 62.0911L47.3979 68.158" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M-148 95.0932L84.2482 95.0932C102.449 95.0932 117.251 80.2915 117.251 62.0908C117.251 43.8901 102.449 29.0884 84.2482 29.0884C66.0475 29.0884 51.2458 43.8901 51.2458 62.0908L51.2458 68.1577" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M-148 91.2455L84.2482 91.2455C100.333 91.2455 113.403 78.1625 113.403 62.091C113.403 46.0195 100.32 32.9365 84.2482 32.9365C68.1767 32.9365 55.0937 46.0195 55.0937 62.091L55.0937 68.1579" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M-148 87.3973L84.2482 87.3973C98.2034 87.3973 109.555 76.0459 109.555 62.0907C109.555 48.1356 98.2034 36.7842 84.2482 36.7842C70.2931 36.7842 58.9416 48.1356 58.9417 62.0907L58.9417 68.1576" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M-148 83.5496L84.2482 83.5496C96.087 83.5496 105.707 73.9169 105.707 62.0909C105.707 50.265 96.0742 40.6323 84.2482 40.6323C72.4222 40.6323 62.7896 50.265 62.7896 62.0909L62.7896 68.1578" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M-148 79.7014L84.2482 79.7013C93.9578 79.7013 101.859 71.8003 101.859 62.0907C101.859 52.3811 93.9578 44.48 84.2482 44.48C74.5386 44.48 66.6375 52.3811 66.6375 62.0907L66.6375 68.1576" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M-148 75.8536L84.2482 75.8536C91.8414 75.8536 98.0109 69.6841 98.0109 62.0909C98.0109 54.4976 91.8414 48.3281 84.2482 48.3281C76.6549 48.3281 70.4854 54.4976 70.4854 62.0909L70.4854 68.1578" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M-148 72.0059L84.2482 72.0059C89.7123 72.0059 94.163 67.5552 94.163 62.0911C94.163 56.627 89.7123 52.1763 84.2482 52.1763C78.7841 52.1763 74.3333 56.627 74.3333 62.0911L74.3333 68.158" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M-148 68.1577L84.2482 68.1577C87.5959 68.1577 90.3151 65.4385 90.3151 62.0908C90.3151 58.7431 87.5959 56.0239 84.2482 56.0239C80.9005 56.0239 78.1813 58.7431 78.1813 62.0908L78.1813 68.1577" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M43.5498 102.706L43.5498 311.597" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M47.1709 102.858L47.1709 343.956" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M51.0283 102.858L51.0283 343.956" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M54.8857 102.858L54.8858 343.956" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M58.7432 102.858L58.7432 343.956" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M62.6006 102.858L62.6006 343.956" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M66.458 102.858L66.458 343.956" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M70.3154 102.858L70.3154 343.956" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M74.1729 102.858L74.1729 343.956" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M78.0312 102.858L78.0313 343.956" stroke="#C53333" stroke-miterlimit="10"/>
+            </g>
+          </mask>
+          <g mask="url(#logo_m1)">
+            <circle cx="124.755" cy="136.081" r="193.311" fill="#D9D9D9"/>
+          </g>
+          <mask id="logo_m2" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="43" y="-145" width="313" height="368">
+            <g clip-path="url(#logo_clip1)">
+              <path d="M355.273 102.383L123.025 102.383C100.579 102.383 82.327 120.635 82.327 143.082C82.327 165.528 100.592 183.78 123.025 183.78C145.459 183.78 163.724 165.528 163.724 143.082L163.724 137.015" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M355.273 106.231L123.025 106.231C102.708 106.231 86.1749 122.764 86.1749 143.081C86.1749 163.398 102.708 179.932 123.025 179.932C143.342 179.932 159.876 163.398 159.876 143.081L159.876 137.014" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M355.273 110.079L123.025 110.079C104.825 110.079 90.0229 124.881 90.0229 143.082C90.0229 161.282 104.825 176.084 123.025 176.084C141.226 176.084 156.028 161.282 156.028 143.082L156.028 137.015" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M355.273 113.927L123.025 113.927C106.941 113.927 93.8708 127.01 93.8708 143.081C93.8708 159.153 106.954 172.236 123.025 172.236C139.097 172.236 152.18 159.153 152.18 143.081L152.18 137.014" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M355.273 117.775L123.025 117.775C109.07 117.775 97.7187 129.126 97.7187 143.082C97.7187 157.037 109.07 168.388 123.025 168.388C136.98 168.388 148.332 157.037 148.332 143.082L148.332 137.015" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M355.273 121.623L123.025 121.623C111.186 121.623 101.567 131.255 101.567 143.081C101.567 154.907 111.199 164.54 123.025 164.54C134.851 164.54 144.484 154.907 144.484 143.081L144.484 137.015" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M355.273 125.471L123.025 125.471C113.316 125.471 105.415 133.372 105.415 143.082C105.415 152.791 113.316 160.692 123.025 160.692C132.735 160.692 140.636 152.791 140.636 143.082L140.636 137.015" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M355.273 129.319L123.025 129.319C115.432 129.319 109.262 135.488 109.262 143.081C109.262 150.675 115.432 156.844 123.025 156.844C130.618 156.844 136.788 150.675 136.788 143.081L136.788 137.015" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M355.273 133.166L123.025 133.166C117.561 133.166 113.11 137.617 113.11 143.081C113.11 148.545 117.561 152.996 123.025 152.996C128.489 152.996 132.94 148.545 132.94 143.081L132.94 137.014" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M355.273 137.015L123.025 137.015C119.678 137.015 116.958 139.734 116.958 143.082C116.958 146.429 119.678 149.148 123.025 149.148C126.373 149.148 129.092 146.429 129.092 143.082L129.092 137.015" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M163.724 102.467L163.724 -106.424" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M160.104 102.314L160.104 -138.784" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M156.245 102.314L156.245 -138.784" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M152.388 102.314L152.388 -138.784" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M148.53 102.314L148.53 -138.784" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M144.673 102.314L144.673 -138.784" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M140.815 102.314L140.815 -138.784" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M136.958 102.314L136.958 -138.784" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M133.101 102.314L133.101 -138.784" stroke="#C53333" stroke-miterlimit="10"/>
+              <path d="M129.242 102.314L129.242 -138.784" stroke="#C53333" stroke-miterlimit="10"/>
+            </g>
+          </mask>
+          <g mask="url(#logo_m2)">
+            <circle cx="82.5195" cy="69.0927" r="193.311" transform="rotate(-180 82.5195 69.0927)" fill="#D9D9D9"/>
+          </g>
+        </g>
+        <defs>
+          <clipPath id="logo_clip0">
+            <rect width="367.901" height="312.067" fill="white" transform="matrix(4.37114e-08 1 1 -4.37114e-08 -148 -17.728)"/>
+          </clipPath>
+          <clipPath id="logo_clip1">
+            <rect width="367.901" height="312.067" fill="white" transform="matrix(4.37114e-08 -1 -1 -4.37114e-08 355.273 222.9)"/>
+          </clipPath>
+        </defs>
+      </svg>
+      <span class="brand-text">
+        <span class="name">Peter Duyan</span>
+        <span class="role">Design Leadership</span>
+      </span>
+    </a>
+    <nav>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+    <div class="grid">
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <p class="summary">Design leader with 15+ years building and scaling product design teams across fintech, health, and consumer technology. I lead through craft, creative vision, and an AI-native approach to how design gets made.</p>
+        <hr class="rule" />
+        <div class="contact">
+          <a href="mailto:peterduyan@gmail.com">peterduyan@gmail.com <span class="arrow">↗</span></a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn <span class="arrow">↗</span></a>
+        </div>
+      </aside>
+
+      <!-- Main content -->
+      <div class="content">
+
+        <!-- Experience -->
+        <section>
+          <div class="section-head"><p class="label">Experience</p></div>
+
+          <div class="entry">
+            <div class="entry-meta">
+              <p class="title">Vice President of Product Design</p>
+              <p class="org">Credit Karma</p>
+              <p class="dates">2018 – Present</p>
+            </div>
+            <div class="entry-body">
+              <p>Led Product Design through hyper-growth and acquisition. Built a culture of craft, creative vision, curiosity, and collaboration — investing in each designer's growth and creating a team that consistently did the best work of their careers.</p>
+              <ul>
+                <li>Scaled the design team from <b>8 to 53</b></li>
+                <li>Grew the business from <b>$600M to $2.5B</b> in annual revenue</li>
+                <li>Grew the user base from <b>75M to 143M</b></li>
+                <li>Built a strong management bench of design directors and managers</li>
+                <li>Built and shipped three design systems, driving coherence across products and unlocking innovation within feature teams</li>
+                <li>Integrated AI tools across design workflows — from prototyping to pull requests — improving the speed and quality of design intent and execution</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-meta">
+              <p class="title">Product Design Director</p>
+              <p class="org">SoFi</p>
+              <p class="dates">2017 – 2018</p>
+            </div>
+            <div class="entry-body">
+              <p>Designed SoFi's core mobile and web app, powering expansion into banking, investing, personal loans, and mortgages.</p>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-meta">
+              <p class="title">Design Director</p>
+              <p class="org">AKQA</p>
+              <p class="dates">2016 – 2017</p>
+            </div>
+            <div class="entry-body">
+              <p>Led client engagements in entertainment and retail at one of design's most adventurous firms.</p>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-meta">
+              <p class="title">Design Manager</p>
+              <p class="org">Fitbit</p>
+              <p class="dates">2013 – 2016</p>
+            </div>
+            <div class="entry-body">
+              <p>Led design of Fitbit's activity, heart rate, and sleep experiences. Built teams known for research, innovation, and execution.</p>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-meta">
+              <p class="title">Lead Product Designer</p>
+              <p class="org">Strava</p>
+              <p class="dates">2012 – 2013</p>
+            </div>
+            <div class="entry-body">
+              <p>Expanded Strava from cycling to running through research-led product design.</p>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-meta">
+              <p class="title">Senior Designer</p>
+              <p class="org">Cooper</p>
+              <p class="dates">2010 – 2012</p>
+            </div>
+            <div class="entry-body">
+              <p>Led client engagements in finance and healthcare at one of the industry's most influential design firms.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Skills -->
+        <section>
+          <div class="section-head" style="margin-top:20px;"><p class="label">Skills</p></div>
+          <div class="cols">
+            <div></div>
+            <div class="body-cols">
+              <div class="skillgroup">
+                <h4>Leadership &amp; Team</h4>
+                <ul>
+                  <li>Design Leadership</li>
+                  <li>Team Building</li>
+                  <li>People Management</li>
+                  <li>Mentorship</li>
+                </ul>
+              </div>
+              <div class="skillgroup">
+                <h4>AI &amp; Systems</h4>
+                <ul>
+                  <li>AI Native Product Design</li>
+                  <li>AI Design Infrastructure</li>
+                  <li>Design Systems</li>
+                </ul>
+              </div>
+              <div class="skillgroup">
+                <h4>Craft &amp; Vision</h4>
+                <ul>
+                  <li>Product Vision</li>
+                  <li>Creative Vision</li>
+                  <li>Design Expression</li>
+                  <li>User Interface</li>
+                  <li>User Experience</li>
+                  <li>Interaction Design</li>
+                </ul>
+              </div>
+              <div class="skillgroup">
+                <h4>Research &amp; Method</h4>
+                <ul>
+                  <li>Rapid Prototyping</li>
+                  <li>Design Research</li>
+                  <li>Design Consulting</li>
+                  <li>Co-Active Coaching</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Education -->
+        <section>
+          <div class="section-head" style="margin-top:20px;"><p class="label">Education</p></div>
+          <div class="cols">
+            <div></div>
+            <div class="edu">
+              <p class="deg">Master of Fine Arts<br /><span class="school">School of Visual Arts — New York, NY</span></p>
+              <p class="deg">Bachelor of Fine Arts<br /><span class="school">Bowdoin College — Brunswick, ME</span></p>
+              <p class="deg">Outdoor Leadership<br /><span class="school">NOLS</span></p>
+              <p class="deg">Coaching Education<br /><span class="school">Co-Active Coaching</span></p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <footer id="contact">
+    <div class="wrap">
+      <div class="footer-inner">
+        <h2>Contact me</h2>
+        <div class="contact-links">
+          <a href="mailto:peterduyan@gmail.com">peterduyan@gmail.com <span class="arrow">↗</span></a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn <span class="arrow">↗</span></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</main>
+
+</body>
+</html>
