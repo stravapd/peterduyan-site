@@ -21,7 +21,7 @@
     margin:0;
     background:var(--bg);
     color:var(--fg);
-    font-family:-apple-system,BlinkMacSystemFont,"Inter","Helvetica Neue",Arial,sans-serif;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size:16px;
     line-height:1.55;
     -webkit-font-smoothing:antialiased;
@@ -70,6 +70,9 @@
   }
   section{margin-bottom:8px;}
   .section-head{border-top:1px solid var(--line);padding-top:22px;margin-bottom:26px;}
+  .map{margin:0;}
+  .map img{width:100%;height:auto;display:block;border-radius:6px;}
+  .map figcaption{color:var(--faint);font-size:13px;margin-top:10px;}
 
   .entry{
     display:grid;grid-template-columns:230px 1fr;gap:40px;
@@ -302,6 +305,15 @@
               <p>Led client engagements in finance and healthcare at one of the industry's most influential design firms.</p>
             </div>
           </div>
+        </section>
+
+        <!-- Where I've worked (map) -->
+        <section>
+          <div class="section-head" style="margin-top:20px;"><p class="label">San Francisco</p></div>
+          <figure class="map">
+            <img src="sf_work_map.svg" alt="Map of San Francisco marking where Peter Duyan has worked: Cooper, Credit Karma, Fitbit, SoFi, AKQA, and Strava." />
+            <figcaption>Where I've worked across San Francisco.</figcaption>
+          </figure>
         </section>
 
         <!-- Skills -->
